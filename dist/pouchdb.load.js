@@ -68,7 +68,7 @@ function loadString(db, data, opts, callback) {
       return checkpointer.writeCheckpoint(lastSeq);
     });
   }).then(function () {
-    done();
+    done({last_seq: lastSeq});
   }, done);
 }
 
